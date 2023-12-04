@@ -1,0 +1,38 @@
+InternalClassType: Method
+Coordinate3D: [8.5784,0.0113,0]
+Name: checkExpParameters
+Origin: 42f08459-a1ee-41e0-98b3-d5158dee9b83
+Program: |+1
+ -> boolean
+ 
+ var col:integer := 2
+ var invalidParameter := false
+ while ExpTable[col,0]/=void  -- scan the column index
+ 	var str: string := ExpTable[col,0]
+ 	var AttrStr:string := ValueDescriptions.getOrig(str)
+ 	var AttrVal:any
+ 	for var row := 1 to ExpTable.yDim
+ 		if ExpTable[col, row]/=void
+ 			AttrVal := ExpTable[col, row]
+ 			var oldVal := readValue(AttrStr)
+ 			if NOT writeValue(AttrStr, AttrVal)
+ 				messageBox("Setting input value for experiment "+row+": '"+AttrStr+" := "+AttrVal+"' was impossible",1,1)
+ 				invalidParameter := true
+ 				exitloop
+ 			end
+ 			writeValue(AttrStr, oldVal)
+ 			forget oldVal
+ 		end
+ 	next
+ 	forget AttrVal
+ 	col += 1
+ end
+ 
+ if invalidParameter
+ 	result := false
+ else
+ 	result := true
+ end
+RandomSeed: 35
+UUID: c0255cff-9c7e-4712-9ac9-28917fed823a
+$SequenceNumber: 128

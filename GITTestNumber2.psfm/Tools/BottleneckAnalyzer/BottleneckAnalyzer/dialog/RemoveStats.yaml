@@ -1,0 +1,11 @@
+InternalClassType: Method
+Coordinate3D: [3,10,0]
+Name: RemoveStats
+Origin: 9bb6e47d-028d-40eb-bb82-c0685a85bf3b
+Program: |+1
+ -- called by the context menu
+ dialog.callback("removestats")
+
+RandomSeed: 67
+UUID: 4f24e082-299a-496e-9be4-2938660a683e
+$SequenceNumber: 9

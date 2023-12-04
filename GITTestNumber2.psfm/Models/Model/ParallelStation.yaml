@@ -1,0 +1,12 @@
+InternalClassType: ParallelStation
+Coordinate3D: [12,-5,0]
+Origin: 46274c76-5cdb-4d52-9e49-c73e63c09ef2
+ProcTime: [Normal,20,3,12,30]
+RandomSeed: 104
+StartProcessingWhenFull: false
+UUID: 3386d157-5421-42e5-b307-ed4178698ec9
+XDim: 3
+YDim: 3
+$SequenceNumber: 9
+$Predecessors:
+- d26086e2-5694-4b35-bcd1-94862729fa53

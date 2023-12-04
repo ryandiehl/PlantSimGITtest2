@@ -1,0 +1,25 @@
+InternalClassType: Method
+Coordinate3D: [10.1,-5.5,0]
+Name: removeCharts
+Origin: 9bb6e47d-028d-40eb-bb82-c0685a85bf3b
+Program: |+1
+ -- recursive procedure
+ param frame : object
+ 
+ for var i := 1 to frame.NumNodes
+ 	var obj : object := frame.Node(i)
+ 	frame.eraselayer(layer_of_chart)
+ 	frame.eraselayer(layer_of_chart-1)
+         
+ 	if obj.internalClassName = "Network" 
+ 		removeCharts(obj)
+ 	end
+ 	
+ 	if is3Dopen and obj._3D.exists and obj.internalClassName /= "NwArc" AND
+ 		 obj.internalClassName /= "Interface" AND obj.internalClassName /= "NwMarker"
+ 		obj._3D.deleteStatistics -- do not call for Connector and Interface
+ 	end
+ next
+RandomSeed: 74
+UUID: 67ce2c3a-7768-4a2b-a86c-f941bf8062e2
+$SequenceNumber: 5

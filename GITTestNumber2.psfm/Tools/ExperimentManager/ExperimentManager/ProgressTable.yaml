@@ -1,0 +1,30 @@
+InternalClassType: DataTable
+Coordinate3D: [56.4148,-18.4582,0]
+Name: ProgressTable
+Origin: 6fb33eda-8c16-46cb-b4e8-ad231b2e826f
+UUID: 8ac0e308-dbab-4d9c-a03d-99378054b5da
+$SequenceNumber: 123
+$Data:
+ ListFormat:
+  ColumnIndex: true
+  ColumnWidth: 3
+  DataType: string
+  EditorReadOnly: true
+  RowIndex: true
+  ShowDataType: true
+  ColumnFormat:
+  -
+   Index: 0
+   Width: 10
+  RowFormat:
+  -
+   Index: 0
+   Hidden: false
+  CellFormat:
+  -
+   Index: 1
+   Rows:
+   -
+    Index: 3
+    FontColor: 0x0
+ Columns:

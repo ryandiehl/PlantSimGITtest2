@@ -1,0 +1,13 @@
+InternalClassType: Folder
+ChangePathCtrl:
+Coordinate3D: [0,0,0]
+DestructorCtrl:
+HiddenWhenInLockedFolder: true
+MoveToFolderCtrl:
+Name: Localization
+PermitDeleteCtrl:
+RenameCtrl:
+UUID: 478ecec2-98e2-4c30-a814-873dddae6997
+$SequenceNumber: 3
+3D:
+ BackgroundColor: -1

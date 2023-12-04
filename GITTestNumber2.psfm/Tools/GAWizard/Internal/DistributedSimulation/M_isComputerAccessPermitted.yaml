@@ -1,0 +1,28 @@
+InternalClassType: Method
+Coordinate3D: [15,-5.8500000000000005,0]
+Name: M_isComputerAccessPermitted
+Origin: e323fd22-5471-40c5-a13c-6e974c6e8831
+Program: |+1
+ -- called by: Button 'Test' of the dialog 'Advanced settings' tab 'Distribution'
+ -- resetWizard (check of seetings 'Save report', 'Save results', 'Send e-mail'.)
+ -- NOTE THAT: Don't ask the user to allow the access to the computer.
+ param tip:string -> boolean
+ 
+ if ApplicationVersion >= 23002001
+ 	return askForAccessToTheComputer(tip)
+ else
+ 	if isComputerAccessPermitted
+ 		return true
+ 	else
+ 		var InfoStr := to_str(rootfolder.Localization.getMessage(423,rootFolder.name,"",""),"  ",rootfolder.Localization.getText(451))
+ 		-- The library ExperimentManager demands access to the computer.
+ 		-- Access to the computer is prohibited in the model settings though.
+ 		MessageBox(InfoStr, 1, 3) -- warning with the OK button
+ 		if strLen(tip) > 0
+ 			print "Tip: ",tip
+ 		end
+ 	end
+ end
+RandomSeed: 121
+UUID: b9c84b9b-20ea-469e-b891-f802edc4fee5
+$SequenceNumber: 12

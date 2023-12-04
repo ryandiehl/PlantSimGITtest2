@@ -1,0 +1,11 @@
+InternalClassType: Method
+Coordinate3D: [-1,10,0]
+Name: AnalyzeModel
+Origin: 9bb6e47d-028d-40eb-bb82-c0685a85bf3b
+Program: |+1
+ -- called by the context menu 'Show Analysis'
+ dialog.callback("analyze")
+ --~.markBottleneckObject
+RandomSeed: 68
+UUID: d606f0ed-2726-402c-b68f-f5d686dd4da3
+$SequenceNumber: 8

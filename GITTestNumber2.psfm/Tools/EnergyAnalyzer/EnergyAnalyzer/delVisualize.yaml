@@ -1,0 +1,38 @@
+InternalClassType: Method
+Coordinate3D: [16,7,0]
+Name: delVisualize
+Origin: 2749bf5b-1ffa-426f-b590-9ad889f01e03
+Program: |+1
+ -- button 'Remove', reset, showVisualization
+ Dialog.VisualizationON := false
+ 
+ for var j := EnergyConsumers.YDimIndex downto 1 
+ 	var obj:object  := EnergyConsumers[0,j]
+ 	if obj /= void
+ 		EnergyConsumers[0,j] := makePathRelative(obj,~)
+ 	end
+ 	
+ 	obj := to_str("~.",EnergyConsumers[0,j])
+ 	if obj = void 
+ 		EnergyConsumers.cutRow(j)
+ 	else -- if obj /= void
+ 		var objLoc:object := obj.~
+ 		objLoc.eraselayer(layer)
+ 		
+ 		if objLoc._3D.exists -- with 3D	
+             /* if objLoc._3D.getObject(GrGroupName).exists
+ 				objLoc._3D.getObject(GrGroupName).delete
+ 			end	
+ 			if objLoc._3D.GraphicGroupNames.find(GrGroupName) > 0
+ 				objLoc._3D.deleteGraphicGroup(GrGroupName)
+ 			end*/
+ 			
+ 			if objLoc._3D.existsObject(GrGroupName)
+ 				objLoc._3D.getObject(GrGroupName).delete 
+ 			end
+ 		end -- with 3D
+ 	end -- if obj /= void
+ next -- j
+RandomSeed: 48
+UUID: 51063900-9112-48ee-9c7c-a9650486e2a9
+$SequenceNumber: 10

@@ -1,0 +1,53 @@
+InternalClassType: Method
+Coordinate3D: [24.200000000000003,-5.5,0]
+Name: sortStats
+Origin: 9bb6e47d-028d-40eb-bb82-c0685a85bf3b
+Program: |+1
+ param criteria : integer
+ 
+ var resStats: object := resourceStats
+ var jMax: integer := resStats.yDim
+ resStats.showComment := true
+ var colSort	: integer := 10
+ 
+ switch criteria
+ case 1  -- Working
+ 	for var j := 1 to jMax 
+ 		resStats[colSort,j] := resStats[2,j] -- only working
+ 	next
+ 	-- Sorted according to working time
+ 	resStats.comment := rootfolder.Localization.getText(57)
+ 	
+ case 2  -- set-up
+ 	for var j := 1 to jMax 
+ 		resStats[colSort,j] := resStats[3,j]
+ 	next
+ 	-- Sorted according to the set-up time
+ 	resStats.comment := rootfolder.Localization.getText(64)
+ 	
+ case 3  -- sum working + failure
+ 	for var j := 1 to jMax 
+ 		resStats[colSort,j] := resStats[2,j] + resStats[7,j]
+ 	next
+ 	-- Sorted according to the sum of working time and failure time
+ 	resStats.comment := rootfolder.Localization.getText(58)
+ 	
+ case 4  -- sum working + failure + pause
+ 	for var j := 1 to jMax 
+ 		resStats[colSort,j] := resStats[2,j] + resStats[7,j] + resStats[9,j]
+ 	next
+ 	-- Sorted according to the sum of working time, failure time and pause time
+ 	resStats.comment := rootfolder.Localization.getText(59)
+ 	
+ case 5  -- sum working + Set-up + failure + Pause
+ 	for var j := 1 to jMax 
+ 		resStats[colSort,j] := resStats[2,j] + resStats[3,j] + resStats[7,j] + resStats[9,j]
+ 	next
+ 	-- Sorted according to the sum of working time, set-up time, failure time and pause time
+ 	resStats.comment := rootfolder.Localization.getText(65)
+ end
+ 
+ resStats.sort(colSort,"down")
+RandomSeed: 64
+UUID: 2ca9bef2-9b1f-4f27-8e8d-8725c8536467
+$SequenceNumber: 11

@@ -1,0 +1,27 @@
+InternalClassType: HtmlReport
+Content: |+1
+ # [rootfolder.localization.getText(80)]
+ ## [rootfolder.localization.getText(32)]
+ ><[UsageProfile, 150, 100]
+ ## [rootfolder.localization.getText(81)]
+ ><[Plotter, 150, 100]
+ ## [rootfolder.localization.getText(82)]
+ [EnergyConsumers]
+
+Coordinate3D: [17,13,0]
+Name: ReportObject
+Origin: b3331306-7bc6-44fc-b5cb-733c3b94c1a4
+UUID: d1d9d36d-88a7-4db1-a5cc-530660d20bf7
+$SequenceNumber: 20
+$CustomAttributes:
+-
+ Name: DrainStatistics
+ ID: 1
+ $DataType: method
+ RandomSeed: 38
+-
+ Name: zDrainStatistics
+ ID: 2
+ $DataType: method
+ RandomSeed: 37
+$WindowSize: [972,637]

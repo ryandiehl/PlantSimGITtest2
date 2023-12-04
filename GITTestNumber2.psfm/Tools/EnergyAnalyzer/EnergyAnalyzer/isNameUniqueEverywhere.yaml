@@ -1,0 +1,22 @@
+InternalClassType: Method
+Coordinate3D: [10,10,0]
+Name: isNameUniqueEverywhere
+Origin: 2749bf5b-1ffa-426f-b590-9ad889f01e03
+Program: |+1
+ -- called by: visualize
+ param frame : object, nameToCheck : string -> boolean
+ 
+ if not frame.isNameUnique(nameToCheck) then
+ 	return false
+ end
+ 
+ for var i := 1 to frame.numNodes
+ 	var n : object := frame.node(i)
+ 	if n.InternalClassName = "Network" AND (not isNameUniqueEverywhere(n, nameToCheck)) then
+ 		return false
+ 	end
+ next
+ return true
+RandomSeed: 35
+UUID: 0fc190df-2889-44cd-a9b6-1b1ae1271a41
+$SequenceNumber: 24

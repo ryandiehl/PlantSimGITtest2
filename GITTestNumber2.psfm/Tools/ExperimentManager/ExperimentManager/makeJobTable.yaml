@@ -1,0 +1,66 @@
+InternalClassType: Method
+Coordinate3D: [28.55,-13,0]
+Name: makeJobTable
+Origin: 42f08459-a1ee-41e0-98b3-d5158dee9b83
+Program: |+1
+ -- called by method 'Start', 'M_NewJobId_' (if Rules are used)
+ param ExpNo:integer
+ 
+ var a:any
+ var t:time
+ var j,k,row:integer
+ 
+ JobsTable.delete
+ ProgressTable.setBackgroundColorCells({0,0}..{*,*},white)
+ ProgressTable.delete({0,0}..{*,*})
+ 
+ if UsingRules
+ 	if ExpTable[0,ExpNo] /= ""
+ 		ProgressTable[0,ExpNo] := ExpTable[0,ExpNo]
+ 	else
+ 		ProgressTable[0,ExpNo] := "Exp "+to_str(ExpNo)
+ 	end
+ 	for j := 1 to numRuns
+ 		JobsTable.writeRow(1,j,     ExpNo, j, "open")
+ 		ProgressTable[j,0] := to_str(j)
+ 		ProgressTable.refillDialog
+ 	next
+ 
+ 	currExpNo := JobsTable[1,1]
+ 
+ else -- no rules
+ 
+ 	if UsingTables
+ 		for k := 1 to ExpTable.yDim
+ 			if ExpTable[0,k] /= ""
+ 				ProgressTable[0,k] := ExpTable[0,k]
+ 			else
+ 				ProgressTable[0,k] := "Exp "+to_str(k)
+ 			end
+ 			if ExpTable[1, k] AND (NOT DetailedResults.ExperimentExecuted[1,k])  -- if active experiment
+ 				for j := 1 to numRuns
+ 					row := row + 1
+ 					JobsTable.writeRow(1,row,  k, j, "open")
+ 					ProgressTable[j,0] := to_str(j)
+ 					ProgressTable.refillDialog
+ 				next
+ 			end -- if active
+ 		next-- k
+ 	else -- a single experiment
+ 		k := 1
+ 		if ExpTable[0,k] /= ""
+ 			ProgressTable[0,k] := ExpTable[0,k]
+ 		else
+ 			ProgressTable[0,k] := "Exp "+to_str(k)
+ 		end
+ 		for j := 1 to numRuns
+ 			row := row + 1
+ 			JobsTable.writeRow(1,row, k, j, "open")
+ 			ProgressTable[j,0] := to_str(j)
+ 			ProgressTable.refillDialog
+ 		next
+ 	end
+ end
+RandomSeed: 184
+UUID: 7bf4a150-bd57-402e-983e-040464a40071
+$SequenceNumber: 95
