@@ -8,5 +8,12 @@ UUID: 3386d157-5421-42e5-b307-ed4178698ec9
 XDim: 3
 YDim: 3
 $SequenceNumber: 9
+$Successors:
+-
+ $Succ: a53f9bda-cd11-414d-83b7-501ef05f1e7f
+ Name: Connector4
+ Origin: b51352e5-e162-4352-98f1-04a0393d61f8
+ UUID: 764c6f83-380a-468f-a3b2-bfa773ed888a
+ $SequenceNumber: 12
 $Predecessors:
 - d26086e2-5694-4b35-bcd1-94862729fa53

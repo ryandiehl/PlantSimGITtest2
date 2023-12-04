@@ -1,5 +1,6 @@
 InternalClassType: Station
 Coordinate3D: [8,-5,0]
+ExitCtrl: "Method"
 Name: Station1
 Origin: 5d2d9d07-0848-4ee0-9e97-066854862aa2
 ProcTime: 15

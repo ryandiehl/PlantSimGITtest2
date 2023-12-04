@@ -1,0 +1,15 @@
+InternalClassType: Source
+Coordinate3D: [10,-1,0]
+Name: Source1
+Origin: 882ccaa0-b089-4f94-8fa3-5541b6371305
+Path: 791dda1f-a25e-4945-84c4-43e72e153daa
+RandomSeed: 640
+UUID: c091ca5b-d516-4343-a30e-9a50fff71326
+$SequenceNumber: 13
+$Successors:
+-
+ $Succ: d5ac4d1a-9d70-47cc-89de-36b798de4441
+ Name: Connector5
+ Origin: b51352e5-e162-4352-98f1-04a0393d61f8
+ UUID: 63ec2f88-707c-4916-aa9b-e58949c1dfb6
+ $SequenceNumber: 14

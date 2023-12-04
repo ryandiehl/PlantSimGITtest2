@@ -1,0 +1,15 @@
+InternalClassType: Method
+Coordinate3D: [5,-8,0]
+Origin: 9ee5508b-d484-4e2f-b231-2bebe5529853
+Program: |+1
+ var x:= z_uniform(1,99)
+ if x>70
+ 	@.move(Drain)
+ else
+ 	@.move(Drain1)
+ end
+RandomSeed: 642
+UUID: 71131391-d921-444f-8ccf-6e07f8512c3d
+$SequenceNumber: 15
+3D:
+ VisibleGraphicGroups: ["default","ExitCtrl"]
